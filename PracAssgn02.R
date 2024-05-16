@@ -1,0 +1,30 @@
+#1
+#a)
+data(iris)
+str(iris)
+#b)
+head(iris, 5)
+#c)
+summary(iris)
+#d)
+hist(iris$Petal.Length, main = "Histogram of Petal Length of Iris", xlab = "Values", ylab = "Frequency of Petal Length", xlim = c(0,7), ylim = c(0,60),breaks = 7, col = heat.colors(7), border = "blue" )
+#e)
+boxplot(iris$Petal.Width, main = "Box plot for Petal Width", ylab="Values", col="green", border = "red", notch = TRUE, varwidth = TRUE )
+
+#2
+#a)
+x<-c(17,15,22,24,13,20,25,12,38,32,14,15)
+y<-c("January","February","March","April","May","June","July","August","September","October","November","December")
+barplot(x, main = "Number of Articles Bought Chart", xlab = "Month", ylab = "Articles",names.arg = y,  col = rainbow(length(x)), ylim = c(0,40))
+plot(x, type = "o", col = "red", main = "Number of Articles Bought Line Chart",xlab = "Month", ylab = "Articles", ylim = c(10,40) )
+#b)
+piepercent<-round(100*x/sum(x), 1)
+lbls<-paste(paste(y,piepercent), "%", sep="")
+pie(x, main = "Number of Articles Bought Pie Chart", clockwise = TRUE,labels = lbls,radius = 1, col = terrain.colors(length(x)) )
+
+#3
+data(mtcars)
+str(mtcars)
+boxplot(mtcars$mpg)
+#a)
+boxplot(mtcars$mpg~mtcars$cyl, main = "Box plot for MPG based on no. of cylinders",xlab = "MPG", ylab = "No of Cylinders", horizontal = TRUE, col = c("red","green","blue") )
